@@ -1,8 +1,7 @@
 {
   "learnocaml_version": "1",
-  "groups":
-  { "Interactive Lessons":
-    {
+  "groups": {
+    "group1": {
       "title": "Inclass activities",
       "exercises": [ "01-tracing-recursive-functions" ]
     }

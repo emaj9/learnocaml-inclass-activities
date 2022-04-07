@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 1,
+  "title"              : "Tracing Recursive Functions",
+  "identifier"         : "01-tracing-recursive-functions",
+  "authors"            : [["Eric Mayhew", "eric.mayhew@mail.mcgill.ca"]],
+  "focus"              : ["recursion", "pattern matching"],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : [],
+  "max_score" : 100
+}
