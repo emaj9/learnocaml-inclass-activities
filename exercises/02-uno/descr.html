@@ -1,0 +1,63 @@
+<div>
+
+	<h1> UNO Part 1 </h1>
+	<p>
+		This is the first exercise in a series of exercises that will help you write a working version of UNO in
+		LearnOCaml!
+
+		The purpose of these exercises is to firstly have a little fun, and hopefully at the same time introduce you to
+		some tenents behind "type driven development"
+	</p>
+	<h2> Type Driven Development </h2>
+	<p>
+
+		Type driven development is a style of programming in which we write types first and use those types to guide
+		the rest of our development.
+
+		When you write a program, you often have a conceptual model in your head of how the program should work,
+		how the compoennts interact, and how the data is organized. At first this idea will be very vague but as we
+		get to coding, we start articulating that vision.
+
+		The first step of type drive dev is identifying the types of the program. The types are like the basic
+		components
+		or parts of our game.
+
+		To start you probably have a few ideas about the components of Uno.
+		For instance, we have hands of cards, players, kinds of cards (e.x. skip turn, pick up two), draw deck, discard,
+		etc.
+
+		Let's start typing!
+
+	</p>
+	<h2> Cards and Hands </h2>
+
+	<h3>Card colors</h3>
+	<p>
+		Let's begin with cards.
+		Recall the deck of UNO cards:
+		<i>insert uno card images here</i>
+		what information is on the card? What are all the possible kinds of cards (e.g. color, or value like a number or
+		action?
+		Fill in the type definition for <code>color</code> on the left. For now we are going to ignore black cards
+	</p>
+	<h3>Card values</h3>
+	<p>
+		Now we can repeat this process with values. This one is a little more tricky.
+	</p>
+	<h3> Making cards</h3>
+	Now we can define cards!
+	<h2>Type Alisaes</h2>
+	Sometimes it's convenient to create type aliases.
+	The only thing we need to know about a player is their hand,
+	but it's nicer to refer to them as a 'player' than just as a 'hand'
+	even though for us those are really the same thing.
+	<p> Hands are just list of cards so we can write that! </p>
+	Write out player deck discardd
+
+	<h2> Helper functions </h2>
+	Now let's get a bit more familiar and start coding some functions that will serve us.
+
+	An important concept in UNO is if a card can follow another: <i> insert rules</i>
+
+
+</div>

@@ -3,7 +3,7 @@
   "groups": {
     "group1": {
       "title": "Inclass activities",
-      "exercises": [ "01-tracing-recursive-functions" ]
+      "exercises": [ "01-tracing-recursive-functions", "02-uno" ]
     }
   }
 }
