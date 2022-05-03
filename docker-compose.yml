@@ -1,0 +1,18 @@
+---
+version: "3.3"
+services:
+    learnocaml:
+        image: "ocamlsf/learn-ocaml:master"
+        volumes:
+            - type: volume
+              source: learn-ocaml-sync
+              target: /sync
+            - type: bind
+              source: ./repo
+              target: /repository
+              read_only: true
+        ports:
+            - "8080:8080"
+
+volumes:
+    learn-ocaml-sync:
