@@ -1,0 +1,118 @@
+<div>
+    <h1> UNO Part 1 </h1>
+    <p>
+        This is the first exercise in a series that will guide you in writing
+        a playable implementation of a game similar to UNO.
+
+        Although one of the goals of these exercises is to have fun, we hope to
+        introduce you to a software engineering concept called "type-driven
+        development".
+    </p>
+    <h2> Type-driven development </h2>
+    <p>
+        Type-driven development (TDD) is a style of programming in which we begin by
+        defining types. These definitions later guide our implementations.
+        This stands in contrast to diving head-first into the implementation and
+        worrying about satisfying the typechecker more as an afterthought.
+        The hope of TDD is therefore that the typechecker will act as a
+        helper and guide rather than as an obstacle standing in the way of
+        running the program we've written.
+
+        <aside>
+            It's worth knowing that the acronym TDD is also used, especially
+            outside of the functional programming community, to refer to
+            <em>test-driven development</em>.
+        </aside>
+
+        The "downside" of TDD is that we actually have to <em>think</em> about
+        what we want to write before jumping into writing it! That is, we must
+        develop a conceptual <em>model</em> of the system we want to implement.
+        We must answer two big questions in this conceptual development:
+        <ul>
+            <li> What are the components of this system?  </li>
+            <li> According to what rules do these components interact? </li>
+        </ul>
+
+        Each component of the system ought to be represented as a <em>base
+        type</em>; that is, a new type definition.
+        You might already have some ideas of components of UNO. For example,
+        we have cards, hands, players, the draw deck, and the discard pile.
+
+        We will need to work out a type for each of these so we can represent
+        these real-life entities in our program. So let's get typing!
+    </p>
+
+    <h2> Cards and Hands </h2>
+
+    <h3> Card colors </h3>
+    <p>
+        Let's begin with cards.
+        Recall the deck of UNO cards:
+        <i>insert uno card images here</i>
+        what information is on the card? What are all the possible kinds of cards (e.g. color, or value like a number or
+        action?
+        Fill in the type definition for <code>color</code> on the left. For now
+        we will ignore black cards, which are a bit special in UNO.
+    </p>
+
+    <h3> Card values </h3>
+    <p>
+        Now we can repeat this process with values. This one is a little more tricky.
+    </p>
+
+    <h3> Making cards </h3>
+    <p>
+        Sometimes, one thing is simply made by joining two existing things together.
+        When this happens, we can get away with using a simple tuple.
+    </p>
+
+    <h3> Making hands </h3>
+    <p>
+        We'll model a hand as a list. This comes with some pros and cons. The
+        main advantage is that lists are readily available in OCaml, and the
+        standard library already includes a number of functions for working with
+        lists.
+    </p>
+    <p>
+        The downside is that we don't need, or even want, the ordering that
+        lists impose on our cards. In fact, it would be great to consider equal
+        two hands having all the same cards, but differing only in the order of
+        those cards.
+    </p>
+    <p>
+        This is why TDD is a software engineering principle and not a
+        hard-and-fast rule. It's up to you as the software engineer to choose
+        <em>appropriate</em> data structures, and not necessarily
+        <em>perfect</em> data structures. You must be aware of the tradeoffs you
+        make, and of the invariants upheld by the data structures you choose.
+        The invariants not upheld by the types themselves will need to be
+        maintained carefully by your own code, and should be documented.
+    </p>
+
+    <h3> Players </h3>
+    <p>
+        Since we won't be modelling anything like scoring, the only thing we
+        need to know about a player is what's in their hand.
+        In other words, players and hands are the same!
+        But it's nicer to refer to a player as a <code>player</code> rather than
+        just as a <code>hand</code>, just as it was nicer to refer to a hand as
+        such rather than just as a <code>card list</code>.
+    </p>
+
+    <h3> The deck and discard piles </h3>
+    <p>
+        Define type aliases for <code>deck</code> and <code>discard</code>.
+    </p>
+</div>
+
+<div>
+    <p>
+        In this exercise, you modelled the basic entities of UNO in OCaml.
+        In other words, according to the two basic steps of TDD outlined
+        earlier, we've identified what are the components of the system we're
+        modelling.
+        In the next exercise, we'll move on the second step; that is,
+        identifying the interactions between these components. These
+        interactions will be modelled as functions.
+    </p>
+</div>
