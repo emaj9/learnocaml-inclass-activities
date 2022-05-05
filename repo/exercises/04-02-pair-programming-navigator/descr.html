@@ -1,0 +1,68 @@
+<div>
+    <h2> Pair programming higher-order functions </h2>
+
+    <p>
+        Pair programming is a software development technique in which one
+        programmer, the <em>driver</em>, uses the keyboard to write the code
+        while another, the <em>navigator</em>, guides the development and
+        performs live code review. A crucial component of this development style
+        is that it's <em>two</em> developers to <em>one</em> computer.
+    </p>
+
+    <h3> You are the navigator! </h3>
+
+    <p>
+        If you opened this exercise, it's because you are the <em>navigator</em>.
+        The responsibilities of the navigator are the following.
+    </p>
+
+    <ul>
+        <li>
+            Discuss with the driver the high-level structure of the code that
+            will be written <em>before</em> any writing takes place.
+            <ul>
+                <li> Will you use pattern matching? On which parameter? </li>
+                <li> When will recursion, if any, take place? </li>
+                <li> What is the base case of the recursion? </li>
+                <li> Discuss the expected output of the algorithm for a sample input. </li>
+            </ul>
+        </li>
+        <li>
+            As the driver codes, be mindful of their decisions and don't
+            hesitate to ask them about their choices.
+            <ul>
+                <li> Are the names of variables appropriate? </li>
+                <li> Are appropriate type annotations added? </li>
+                <li> What are the types of the variables introduced via pattern matching? </li>
+            </ul>
+        </li>
+        <li>
+            Identify potential refactorings and discuss them either while the
+            driver is coding, or jot them down and discuss them once the draft
+            implementation is finished.
+            <ul>
+                <li>
+                    The same expression appears multiple times; should we
+                    introduce a <code>let</code>-expression and eliminate the
+                    redundancy?
+                </li>
+                <li>
+                    Is the function tail-recursive?
+                    Does it matter that it is or isn't?
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        Be careful not to tell the driver <em>what</em> to write! Instead, let
+        them decide what to write, but ensure that what is written is
+        well-justified. You are guiding the driver, not bossing them around.
+    </p>
+
+    <p>
+        The template on the left contains specific instructions for guiding the
+        driver through the development of a higher-order function on lists,
+        starting from a concrete implementation that is not higher-order.
+    </p>
+</div>
