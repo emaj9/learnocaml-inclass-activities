@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 1,
+  "title"              : "Pair programming higher-order functions: navigator",
+  "identifier"         : "pair-programming-hofs-navigator",
+  "authors"            : [["Eric Mayhew", "eric.mayhew@mail.mcgill.ca"]],
+  "focus"              : ["higher-order functions", "recursion", "pattern matching", "pair programming"],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : [],
+  "max_score" : 100
+}

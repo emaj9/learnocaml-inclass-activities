@@ -22,8 +22,8 @@
             will be written <em>before</em> any writing takes place.
             <ul>
                 <li> Will you use pattern matching? On which parameter? </li>
-                <li> When will recursion, if any, take place? </li>
                 <li> What is the base case of the recursion? </li>
+                <li> When will recursion, if any, take place? </li>
                 <li> Discuss the expected output of the algorithm for a sample input. </li>
             </ul>
         </li>
@@ -60,9 +60,139 @@
         well-justified. You are guiding the driver, not bossing them around.
     </p>
 
+    <h3> Part 1: finding all diamonds in a hand </h3>
+
     <p>
-        The template on the left contains specific instructions for guiding the
-        driver through the development of a higher-order function on lists,
-        starting from a concrete implementation that is not higher-order.
+        The driver will implement a function that takes as input a
+        <code>hand</code> and outputs a <code>hand</code> consisting only of the
+        cards with the <code>Diamonds</code> suit from the input hand.
+    </p>
+
+    <p>
+        The driver will decide a name for the function and for the function's input.
+        For auto-grading purposes, the name of the function will have to be changed
+        to <code>find_all_diamonds</code>. When the implementation is finished,
+        explain this to the driver and change the name of the function to
+        <code>find_all_diamonds</code>.
+    </p>
+
+    <ul>
+        <li>
+            Encourage the driver to test their implementation on the given
+            <code>sample_hand</code>.
+        </li>
+        <li>
+            If they didn't already, ask the driver to add type annotations to
+            the function header they write.
+        </li>
+    </ul>
+
+    <h3> Part 2: going higher-order </h3>
+
+    <p>
+        In this part, the driver will generalize the function they wrote into a
+        higher-order function that selects all cards from a given hand
+        satisfying a given <em>predicate</em>.
+        Read the following paragraphs separately and reconvene when you're both
+        finished.
+    </p>
+
+    <p>
+        A predicate is a function that inputs one thing and returns a boolean.
+        It decides whether its input satisfies a certain property.
+        For example, the function <code>fun n -> n mod 2 = 0</code> is a
+        predicate on integers: it decides whether the input integer has the
+        property of being an even number.
+    </p>
+
+    <p>
+        The big idea of the generalization to do in this part of the exercise is
+        this: the newly written function will accept not only a hand, but also a
+        <em>predicate</em> on cards. The output of this new function will
+        consist of all the cards from the input hand satisfying the property
+        decided by the predicate.
+    </p>
+
+    <h4> Reconvene and share your understanding of predicates with each other </h4>
+
+    <p>
+        <b>Q2.1. Discuss with your partner:</b>
+        in plain English, what is the predicate used in the implementation
+        from part 1?
+
+        <details>
+            <summary>Hint</summary>
+            Identify the expression that computes a boolean and
+            describe what it checks.
+        </details>
+    </p>
+
+    <p>
+        <b>Q2.2.</b> Next, <b>ask the driver</b> to define this predicate in OCaml.
+        If they're not sure how to start, the structure of the definition should
+        look like <br>
+        <code>let ??? = fun card -> ???</code> or <br>
+        <code>let ??? card = ???</code> <br>
+        Choose the name of the function according to the plain-English
+        description you came up with.
+        For autograding reasons, you will need to use a specific name, but since
+        naming things is hardest thing in computer science, it's worth
+        practising! After you decide on a name, click below to reveal the name
+        you will need to use for the grader.
+        <details>
+            <summary>Click to reveal name</summary>
+            <code>is_diamond</code>
+            <p>
+                Generally speaking, predicates are named like questions:
+                <code>is_yadayada</code>, <code>has_whatever</code>,
+                <code>can_yoodle</code>, etc.
+            </p>
+        </details>
+    </p>
+
+    <p>
+        <b>Q2.3. As a team,</b> figure out what the type of the predicate is.
+        <details>
+            <summary>Hint</summary>
+            Since it's a function of one input, the type will be of the form<br>
+            <code>??? -> ???</code>
+        </details>
+    </p>
+
+    <p>
+        <b>Q2.4.</b> Now the driver is ready to start the implementation of the
+        generalized function! <b>Ask the driver</b> to choose a name for the new
+        function, and to choose names for its inputs.<br>
+    </p>
+    <p>
+        <b>Q2.5. As a team,</b> work out the <em>type</em> of the function
+        before the driver begins the implementation.
+
+        <details>
+            <summary>Hint 1</summary>
+            Since this is a function of two inputs, the type will be of the form<br>
+            <code>??? -> ??? -> ???</code>
+        </details>
+
+        <details>
+            <summary>Hint 2</summary>
+            One of the parameters will be a predicate on cards, and you already
+            worked out what is the type of a predicate on cards in Q2.3.
+            Be sure to use parentheses, as <code>(?? -> ??) -> ??</code> is not
+            the same as <code>?? -> ?? -> ??</code>!
+        </details>
+    </p>
+    <p>
+        <b>Q2.6. Ask the driver</b> to implement the body of the function.
+
+        Consider referring back to the guiding questions at the top of this document to
+        prompt the driver.
+    </p>
+
+    <p>
+        The driver will have chosen a name for the generalized function, like in part 1,
+        but it will need to be changed to <code>find_all</code> for autograding
+        reasons. Furthermore, the order of the parameters must be that the
+        predicate comes first, then the hand.
     </p>
 </div>

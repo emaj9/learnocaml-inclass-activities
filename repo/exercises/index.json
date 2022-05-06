@@ -3,7 +3,13 @@
   "groups": {
     "group1": {
       "title": "Inclass activities",
-      "exercises": [ "01-tracing-recursive-functions", "02-uno-datatypes", "03-uno-functions" ]
+      "exercises": [
+          "01-tracing-recursive-functions",
+          "02-uno-datatypes",
+          "03-uno-functions",
+          "04-01-pair-programming-driver",
+          "04-02-pair-programming-navigator"
+      ]
     }
   }
 }

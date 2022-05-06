@@ -21,4 +21,52 @@
         <li> Ask questions to the navigator, especially when you're unsure of what to write next. </li>
         <li> Last but not least, you write the code! </li>
     </ul>
+
+    <h3> Setup: playing cards </h3>
+
+    Familiarize yourself with the definitions in the prelude and the sample hand
+    defined in the template. The definitions model standard playing cards,
+    albeit imperfectly: the <code>Num</code> constructor takes in any integer,
+    but for example, the card <code>(Num 13, Spades)</code> doesn't describe a
+    real card!
+
+    <h3> Part 1: finding all diamonds in a hand </h3>
+
+    <p>
+        First, implement a recursive function that takes as input a
+        <code>hand</code> and outputs a <code>hand</code> consisting only of the
+        cards with the <code>Diamonds</code> suit from the input hand. It is up
+        to you, the driver, to decide a name for this function and for its
+        input.
+    </p>
+
+    <h3> Part 2: going higher-order </h3>
+
+    <p>
+        Now you will generalize the function you wrote into a higher-order
+        function capable of selecting all cards from a hand satisfying a given
+        predicate.
+        Read the following paragraphs separately and reconvene when you're both
+        finished.
+    </p>
+
+    <p>
+        A predicate is a function that inputs one thing and returns a boolean.
+        It decides whether its input satisfies a certain property.
+        For example, the function <code>fun n -> n mod 2 = 0</code> is a
+        predicate on integers: it decides whether the input integer has the
+        property of being an even number.
+    </p>
+
+    <p>
+        The big idea of the generalization to do in this part of the exercise is
+        this: the newly written function will accept not only a hand, but also a
+        <em>predicate</em> on cards. The output of this new function will
+        consist of all the cards from the input hand satisfying the property
+        decided by the predicate.
+    </p>
+
+    <h4> Reconvene and share your understanding of predicates with each other </h4>
+
+    <p> The navigator will now guide you through the rest of the implementation. </p>
 </div>
