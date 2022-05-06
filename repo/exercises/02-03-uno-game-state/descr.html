@@ -1,0 +1,120 @@
+<div>
+    <p>
+        This is the third exercise in a series that will guide you in writing
+        a playable implementation of a game similar to UNO.
+
+        This exercise builds directly on the second part.
+        Make sure you complete part 2 first!
+    </p>
+
+    <p>
+        In this exercise, you will explore purely-functional state management.
+        That is, without using mutable variables, how do we encode
+        <em>state</em> in functional programming?
+    </p>
+
+    <p>
+        <b>The big idea</b> is to define a type that represents the state of the
+        system, in this case the game of UNO. Functions that "modify" the state
+        of the game will actually take as input the current state of the game,
+        and output the a new state of the game. Then, by chaining these
+        "state-modifying" functions together, we implement the game.
+    </p>
+
+    <p>
+        This approach to stateful programming has a few advantages over using
+        mutable variables. By paying the price of manually passing around the
+        state, it becomes easy to implement features such as <em>undo</em>: just
+        keep track of the previous state and return to it. (Although, in a
+        proper game, taking back a move would be cheating!) We could also
+        implement an AI for our game: it can take the current game state, use
+        the ordinary gameplay functions we will implement to simulate possible
+        moves, evaluate the outcomes of those moves, and choose the best one.
+    </p>
+
+    <p>
+        The game state type, called <code>game</code>, is already defined for
+        you in the prelude. You are encouraged to read the definition and the
+        description in the comment below it.
+    </p>
+
+    <p>
+        <b>Q1.1. Implement the function</b>
+        <code>next_player : game -> game</code> that advances play to the next
+        player.
+    </p>
+
+    <p>
+        <b>Q1.2. Implement the function</b>
+        <code>get_playable_cards : game -> card list</code> that computes a list
+        of cards that are allowed to be played by the current player.
+    </p>
+
+    <p>
+        <b>Q1.3. Implement the function</b>
+        <code>pick_up : game -> game * card</code>
+        that removes the top card from the deck and returns it along with the
+        updated game state.
+        If the deck is empty, then the discard pile is shuffled to first produce
+        a new, nonempty deck.
+        Take care to preserve the top card of the discard pile when doing this,
+        as the discard pile may never be empty in UNO.
+        That is, you must shuffle <em>all but the top card</em> of the discard
+        pile to produce the new deck.
+        Use the function <code>shuffle</code> in the prelude to perform the
+        shuffle.
+    </p>
+
+    <p>
+        <b>Q1.4. Implement the function</b>
+        <code>effect_card : card -> game -> game</code> that performs the effect
+        of a card.<br>
+        Playing any card has the effect of advancing play to the next player.
+        Use the function <code>next_player</code> you wrote earlier to achieve this.
+        The special cards <code>Plus2</code>, <code>Skip</code>, and
+        <code>Reverse</code> have extra effects.
+
+        <dl>
+            <dd>Skip</dd>
+            <dt>has the effect of skipping the next player's turn</dt>
+            <dd>Reverse</dd>
+            <dt>
+                reverses the order of play, e.g. if the player order is
+                <code>A, B, C, D</code> (A is the current player, and suppose this
+                order is "clockwise"), then executing a <code>Reverse</code> will
+                result in the order <code>A, D, C, B</code>, so that calling
+                <code>next_player</code> produces a "counterclockwise" order.
+            </dt>
+            <dd>Plus2</dd>
+            <dt>
+                Makes the next player pick up two cards from the deck.
+                Use the function <code>pick_up</code> you wrote before to correctly
+                handle shuffling the deck in case it should become empty.
+                <details>
+                    <summary>Hint / style tip.</summary>
+                    Advance play to the next player early, then add the two cards
+                    picked up to the now-current player's hand.
+                </details>
+            </dt>
+        </dl>
+
+        The function <code>effect_card</code> is called at the end of
+        <code>play_card</code>, so card selected from the hand of the current
+        player has already been removed from their hand and added to the discard
+        pile by the time <code>effect_card</code> is called.
+    </p>
+</div>
+
+<div>
+    <p>
+        In this exercise, you modelled the basic flow of a game of UNO: there is
+        a way for players to select cards to play, and the effects of cards are
+        honored.
+    </p>
+    <p>
+        In the next exercise (TODO) we will explore the player's option to pick
+        up a card / their obligation to in case they have no playable cards.
+        We will also implement the winning condition of the game, and the setup
+        of the initial deck and player hands.
+    </p>
+</div>

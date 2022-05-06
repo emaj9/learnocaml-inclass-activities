@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 1,
+  "title"              : "Type-driven development with UNO part 3: game state",
+  "identifier"         : "uno-game-state",
+  "authors"            : [["Eric Mayhew", "eric.mayhew@mail.mcgill.ca"]],
+  "focus"              : ["type-driven development"],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : [],
+  "max_score" : 100
+}
