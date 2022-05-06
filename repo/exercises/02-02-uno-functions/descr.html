@@ -1,0 +1,128 @@
+<div>
+    <p>
+        This is the second exercise in a series that will guide you in writing
+        a playable implementation of a game similar to UNO.
+
+        This exercise builds directly on the first part. Make sure you complete part 1 first!
+    </p>
+
+    <p>
+        In this exercise, you will explore the second step of TDD: modelling the
+        interactions of the system's components.
+        These interactions will take the form of functions. We will pay close
+        attention to the notion of <em>invariant</em>, understand what
+        invariants are present in the UNO system, and how our functions uphold
+        these invariants.
+    </p>
+
+    <h2> Interactions between cards </h2>
+
+    <h3> Follow-up cards </h3>
+
+    <p>
+        When it's your turn in UNO, here's what usually happens. First try to
+        find a <em>suitable</em> card from your hand and play it. If you have no
+        suitable cards, then you pick one up from the draw pile. If that card is
+        <em>suitable</em>, then you can play it. Otherwise, you simply hold on
+        to it and play continues with the next player.
+    </p>
+
+    <p>
+        I've emphasized the word "suitable" on purpose. This suitability is in
+        fact a relation between cards! In particular, you can add a card to the
+        discard pile if it meets any of the following conditions.
+        <ul>
+            <li>
+                The value of the top card of the discard pile equals the value
+                of the card you want to play; e.g. a <code>3</code> of any color can
+                be played on top of a <code>3</code> of any color.
+            </li>
+            <li>
+                The color of the top card of the discard pile equals the color
+                of the card you want to play; e.g. any green card can follow any
+                other green card.
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        <b>Q1.1.</b> Let's call this relation between cards the
+        <code>can_follow</code> relation. What we need to implement is a
+        function that <em>decides</em> this relation. That is, <b>implement the
+        function</b> <code>can_follow : card -> card -> bool</code> that outputs
+        <code>true</code> if and only if the second card can be played on top of
+        the first card.
+    </p>
+
+    <h3> Finding all follow-ups </h3>
+
+    <p>
+        Let's imagine how one would play our game for a moment.
+        When it's a player's turn, they will choose a card from their hand to
+        play or choose to pick up a card from the draw pile.
+    </p>
+
+    <p>
+        One way to achieve this is to prompt the player with a list of choices,
+        one for each card from their hand that they could play, and a final
+        choice along the lines of "pick up a card".
+        To create this list of choices, we need to identify all the possible
+        follow-up cards from the player's hand.
+    </p>
+
+    <p>
+        <b>Q1.2. Implement the function</b>
+        <code>all_follow_ups : card -> hand -> hand</code>
+        that identifies from the given hand all the possible follow-ups to the
+        given card.
+    </p>
+
+    <p>
+        <b>Q1.3.</b> Next, we will need to add and remove cards from decks and
+        hands and discard piles. Fortunately, these are all the same thing,
+        (lists of cards,) so we only need one implementation for adding, and one
+        for removing.
+    </p>
+
+    <p>
+        <b>Q1.3.1. Implement the function</b>
+        <code>add_card : card -> hand -> hand</code> that adds a card to the
+        given hand.
+
+        <details>
+            <summary>Hint: don't overthink it...</summary>
+            A hand is simply a list of cards; how do we add an element to a list?
+        </details>
+
+        <details>
+            <summary>Reveal this after completing the implementation.</summary>
+            You might wonder why we bothered defining <code>add_card</code> at
+            all since it would be much shorter to simply write <code>a ::
+            b</code> instead of <code>add_card a b</code>.
+            The purpose is to make our code both more domain-specific and more
+            abstract: if we directly used <code>::</code>, then we would expose
+            the fact that hands, decks, and discard piles are all lists of
+            cards.
+            By defining <code>add_card</code>, we make it easier to change the
+            representation of these concepts if we should need to later in a
+            refactoring.
+        </details>
+    </p>
+
+    <p>
+        <b>Q1.3.2. Implement the function</b>
+        <code>remove_card : card -> hand -> hand</code> that removes
+        <em>one</em> instance of the given card from the given hand.
+        This will take more code than implementing <code>add_hand</code>!
+        <br>
+        UNO cards, unlike standard playing cards, are not all unique: there are
+        several green threes for example. Ensure to only remove one and not
+        all instances of the given card.
+    </p>
+</div>
+
+<div>
+    <p>
+        In this exercise, you modelled
+    </p>
+</div>

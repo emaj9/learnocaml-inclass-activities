@@ -5,8 +5,8 @@
       "title": "Inclass activities",
       "exercises": [
           "01-tracing-recursive-functions",
-          "02-uno-datatypes",
-          "03-uno-functions",
+          "02-01-uno-datatypes",
+          "02-02-uno-functions",
           "04-01-pair-programming-driver",
           "04-02-pair-programming-navigator"
       ]
