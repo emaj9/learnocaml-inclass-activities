@@ -74,19 +74,18 @@
         The special cards <code>Plus2</code>, <code>Skip</code>, and
         <code>Reverse</code> have extra effects.
 
-        <dl>
-            <dd>Skip</dd>
-            <dt>has the effect of skipping the next player's turn</dt>
-            <dd>Reverse</dd>
-            <dt>
+        <ul>
+            <li><b>Skip</b> has the effect of skipping the next player's turn </li>
+            <li>
+                <b>Reverse</b>
                 reverses the order of play, e.g. if the player order is
                 <code>A, B, C, D</code> (A is the current player, and suppose this
                 order is "clockwise"), then executing a <code>Reverse</code> will
                 result in the order <code>A, D, C, B</code>, so that calling
                 <code>next_player</code> produces a "counterclockwise" order.
-            </dt>
-            <dd>Plus2</dd>
-            <dt>
+            </li>
+            <li>
+                <b>Plus2</b>
                 Makes the next player pick up two cards from the deck.
                 Use the function <code>pick_up</code> you wrote before to correctly
                 handle shuffling the deck in case it should become empty.
@@ -95,8 +94,8 @@
                     Advance play to the next player early, then add the two cards
                     picked up to the now-current player's hand.
                 </details>
-            </dt>
-        </dl>
+            </li>
+        </ul>
 
         The function <code>effect_card</code> is called at the end of
         <code>play_card</code>, so card selected from the hand of the current

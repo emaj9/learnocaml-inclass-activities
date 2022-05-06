@@ -33,11 +33,11 @@ let rec remove_card card hand =
     throw error? return empty list? use an option? return a bool (and a tuple :(..) ?*)
   | [] -> []
 
-let add_card card pile = card :: pile
+let add_card (card : card) (pile : hand) = card :: pile
 
 (* PART 3: The game state *)
 
-type game = (player list, deck, discard)
+type game = player list * deck * discard
 
 (* The state of the game is encoded as a triple.
    1. The list of players, being ordered, encodes the turn order of the players.
@@ -86,7 +86,7 @@ let riffle deck =
   interleave front back
 
 (* Repeats `riffle` n times on the given deck. *)
-let riffle_times n deck = match n with
+let rec riffle_times n deck = match n with
   | 0 -> deck
   | n -> riffle_times (n - 1) (riffle deck)
 
