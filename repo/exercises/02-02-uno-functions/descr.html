@@ -54,6 +54,13 @@
         the first card.
     </p>
 
+    <details>
+        <summary>Follow-up question when you finish Q1.1.</summary>
+        Does the order of the cards matter? That is, does <code>can_follow c1 c2
+        = can_follow c2 c1</code> for any <code>c1</code>, <code>c2</code>?
+        In other words, is the <code>can_follow</code> relation <em>symmetric?</em>
+    </details>
+
     <h3> Finding all follow-ups </h3>
 
     <p>
@@ -76,6 +83,8 @@
         that identifies from the given hand all the possible follow-ups to the
         given card.
     </p>
+
+    <h3> Hand management </h3>
 
     <p>
         <b>Q1.3.</b> Next, we will need to add and remove cards from decks and
@@ -123,6 +132,15 @@
 
 <div>
     <p>
-        In this exercise, you modelled
+        In this exercise, you modelled the fundamental relation between UNO
+        cards, the <code>can_follow</code> relation. You built on this relation
+        by extending it to hands in a natural way, by filtering the hand
+        according whether its consituent cards can follow a fixed, given card.
+    </p>
+    <p>
+        In the next exercise, you will explore the notion of <em>game
+        state</em>. That is, you will see how we can represent the state of the
+        game and how to encode changes to this state, all without using mutable
+        variables.
     </p>
 </div>

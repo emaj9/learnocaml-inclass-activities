@@ -98,9 +98,9 @@
         </ul>
 
         The function <code>effect_card</code> is called at the end of
-        <code>play_card</code>, so card selected from the hand of the current
-        player has already been removed from their hand and added to the discard
-        pile by the time <code>effect_card</code> is called.
+        <code>play_card</code>. This means that by the time <code>effect_card c
+        g</code> is called, the card <code>c</code> has already been removed
+        from the current player's hand and added to the discard pile.
     </p>
 </div>
 

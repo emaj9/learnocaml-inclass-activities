@@ -105,6 +105,13 @@
         property of being an even number.
     </p>
 
+    <details>
+        <summary>
+            What is the OCaml type of the above predicate on integers? Write your answer in a comment on the left.
+        </summary>
+        <code>int -> bool</code> which we read as "int goes to bool".
+    </details>
+
     <p>
         The big idea of the generalization to do in this part of the exercise is
         this: the newly written function will accept not only a hand, but also a
@@ -113,7 +120,16 @@
         decided by the predicate.
     </p>
 
+    <details>
+        <summary>
+            What would be the OCaml type of a predicate on cards? Write your answer in a comment on the left.
+        </summary>
+        <code>card -> bool</code> which we read as "card goes to bool".
+    </details>
+
     <h4> Reconvene and share your understanding of predicates with each other </h4>
+
+    Compare your answers to the questions about OCaml types for predicates.
 
     <p>
         <b>Q2.1. Discuss with your partner:</b>
@@ -128,7 +144,8 @@
     </p>
 
     <p>
-        <b>Q2.2.</b> Next, <b>ask the driver</b> to define this predicate in OCaml.
+        <b>Q2.2.</b> Next, <b>ask the driver</b> to define this predicate as a
+        function in OCaml.
         If they're not sure how to start, the structure of the definition should
         look like <br>
         <code>let ??? = fun card -> ???</code> or <br>
@@ -157,6 +174,14 @@
             Since it's a function of one input, the type will be of the form<br>
             <code>??? -> ???</code>
         </details>
+        <details>
+            <summary>
+                Solution
+            </summary>
+            <code>card -> bool</code> as before; it's a predicate on cards after
+            all!
+        </details>
+
     </p>
 
     <p>
@@ -178,15 +203,17 @@
             <summary>Hint 2</summary>
             One of the parameters will be a predicate on cards, and you already
             worked out what is the type of a predicate on cards in Q2.3.
-            Be sure to use parentheses, as <code>(?? -> ??) -> ??</code> is not
-            the same as <code>?? -> ?? -> ??</code>!
+            Be sure to use parentheses, as <code>(?? -> ??) -> ?? -> ??</code>
+            (a function of two inputs, the first of which is itself a fucntion)
+            is not
+            the same as <code>?? -> ?? -> ?? -> ??</code> (a function of three inputs) !
         </details>
     </p>
     <p>
         <b>Q2.6. Ask the driver</b> to implement the body of the function.
 
         Consider referring back to the guiding questions at the top of this document to
-        prompt the driver.
+        prompt the driver as they code.
     </p>
 
     <p>

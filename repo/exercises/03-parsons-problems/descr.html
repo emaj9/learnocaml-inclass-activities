@@ -7,10 +7,14 @@
 
     <h3> Q1: Currying and uncurrying </h3>
 
-    Match the correct line of code to the respective function, curry or uncurry.
+    <p>
+        Match the correct line of code to the respective function, curry or uncurry.
 
-    <code> (fun (y,x) -> f y x) </code>
-    <code> (fun x y -> f (x, y)) </code>
+        <ul>
+            <li> <code> fun (y,x) -> f y x </code> </li>
+            <li> <code> fun x y -> f (x, y) </code> </li>
+        </ul>
+    </p>
 
     <h3> Q2: all_primes </h3>
     Write a function that calculates all prime numbers within a given range <code>a, b</code>
@@ -19,6 +23,7 @@
     require indentation!
 
     <code>
+    <pre>
 let n = max n (-n) in
 if is_prime a then a :: rest else rest;;
 let rec is_not_divisor d =
@@ -27,15 +32,17 @@ in
 let rest = all_primes (a + 1) b in
 is_not_divisor 2
 if a > b then [] else
+    </pre>
     </code>
 
 
     <h3> Q3: mode </h3>
     <code>mode : 'a list -> 'a</code> is a function that takes a list containing <em>any-type ('a)</em> elements and
     returns
-    the most common one (aka the mode of the distribution represented by the list). In case of tie-breakers (two or more
-    elements are presently the same,
+    the most common one (aka the mode of the distribution represented by the list).
+    In case of tie (two or more elements have equal counts), return the element appearing latest in the list.
     <code>
+    <pre>
 | [] -> if cur_num > max_num then cur_el else max_el
 | [] -> failwith "List too small."
 | hd :: tl when cur_num > max_num ->
@@ -47,6 +54,7 @@ aux tl (cur_el, cur_num + 1) max_stats
 aux tl (hd, 1) (hd, 1)
 aux tl (hd, 1) max_stats
 match l with
+    </pre>
     </code>
 
     <h3> Q4: Making change </h3>
@@ -54,18 +62,19 @@ match l with
     a list of coins and target amount of money, returns a list of coins totalling the target amount.
     Ex. finding change for $11 with coins = [2;3;5] should return [5;3;3]. 
     You assume you have an infinite amount of the coins.
-    This algorithm will use continuations.
+    This algorithm will use exceptions.
 
     <code>
-
-  if amt = 0 then [] 
-	      coin :: change coins (amt - coin)
-      | coin::cs ->  
-	  if coin > amt then
-	    change cs amt
-      | [] -> raise Change
-	    with Change -> change cs amt
-	  else 
-	    try 
+    <pre>
+if amt = 0 then [] 
+coin :: change coins (amt - coin)
+| coin::cs ->  
+if coin > amt then
+change cs amt
+| [] -> raise Change
+with Change -> change cs amt
+else 
+try 
+    </pre>
     </code>
 </div>

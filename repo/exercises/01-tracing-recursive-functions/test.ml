@@ -61,6 +61,8 @@ let nil = constr "[]" None
    by chaining together applications of the :: constructor. *)
 let list_sugar exps = List.fold_right cons exps nil
 
+let plus e1 e2 = apply (lident "+") [e1; e2]
+
 (* checks whether two options are equal according to a given function to check inside *)
 let option_equals o1 o2 inside = match o1, o2 with
   | Some x1, Some x2 -> inside x1 x2
@@ -99,13 +101,6 @@ let rec exp_equals e1 e2 =
   | Pexp_fun (label1, def_val1, pat1, body1), Pexp_fun (_, _, _, _) -> raise (NotImplemented "fuck1")
   *)
   | _ -> raise (NotImplemented "fuck")
-
-let plus e1 e2 = apply (lident "+") [e1; e2]
-
-let solution_step_2 =
-  plus (int_const 1)
-    (apply (lident "sum") [list_sugar [int_const 2; int_const 3]])
-let student_step_2 = Hashtbl.find top_level_bindings "sum_step_2"
 
 (* let x = raise NotImplemented *)
 
